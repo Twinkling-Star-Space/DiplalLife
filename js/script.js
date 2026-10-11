@@ -13,11 +13,18 @@ const sections = [
         details: [
             {
                 dphoto: "images/education.png",
-                description: "This is my first project."
+                description: "IOE Campus, Pulchowk, Kathmandu",
+                symbol: ">"
             },
             {
                 dphoto: "images/engineering.png",
-                description: "My journey into engineering."
+                description: "St. Xavier's College, Maitighar,Kathmandu",
+                symbol: ">"
+            },
+            {
+            dphoto: "images/engineering.png",
+            description: "Super Sense Secondary School, Dharapani, Dhanusha, Madhesh",
+            symbol: ">"
             }
         ]
     },
@@ -28,11 +35,28 @@ const sections = [
         details: [
             {
                 dphoto: "images/education.png",
-                description: "This is my first project."
+                description: "Maithili Jude Sheetal",
+                symbol: ">"
             },
             {
                 dphoto: "images/engineering.png",
-                description: "My journey into engineering."
+                description: "Raksha Bandhan",
+                symbol: ">"
+            },
+            {
+                dphoto: "images/engineering.png",
+                description: "Dashain Festival",
+                symbol: ">"
+            },
+            {
+                dphoto: "images/engineering.png",
+                description: "Diwali",
+                symbol: ">"
+            },
+            {
+                dphoto: "images/engineering.png",
+                description: "Holi",
+                symbol: ">"
             }
         ]
     },
@@ -43,11 +67,13 @@ const sections = [
         details: [
             {
                 dphoto: "images/education.png",
-                description: "This is my first project."
+                description: "Flight booking system, 2025",
+                symbol: ">"
             },
             {
                 dphoto: "images/engineering.png",
-                description: "My journey into engineering."
+                description: "School Website, 2026",
+                symbol: ">"
             }
         ]
     },
@@ -58,11 +84,13 @@ const sections = [
         details: [
             {
                 dphoto: "images/education.png",
-                description: "This is my first project."
+                description: "This is my first project.",
+                symbol: ">"
             },
             {
                 dphoto: "images/engineering.png",
-                description: "My journey into engineering."
+                description: "My journey into engineering.",
+                symbol: ">"
             }
         ]
     },
@@ -73,11 +101,13 @@ const sections = [
         details: [
             {
                 dphoto: "images/education.png",
-                description: "This is my first project."
+                description: "This is my first project.",
+                symbol: ">"
             },
             {
                 dphoto: "images/engineering.png",
-                description: "My journey into engineering."
+                description: "My journey into engineering.",
+                symbol: ">"
             }
         ]
     },
@@ -88,11 +118,13 @@ const sections = [
         details: [
             {
                 dphoto: "images/education.png",
-                description: "This is my first project."
+                description: "This is my first project.",
+                symbol: ">"
             },
             {
                 dphoto: "images/engineering.png",
-                description: "My journey into engineering."
+                description: "My journey into engineering.",
+                symbol: ">"
             }
         ]
     },
@@ -103,11 +135,13 @@ const sections = [
         details: [
             {
                 dphoto: "images/education.png",
-                description: "This is my first project."
+                description: "This is my first project.",
+                symbol: ">"
             },
             {
                 dphoto: "images/engineering.png",
-                description: "My journey into engineering."
+                description: "My journey into engineering.",
+                symbol: ">"
             }
         ]
     },
@@ -118,11 +152,13 @@ const sections = [
         details: [
             {
                 dphoto: "images/education.png",
-                description: "This is my first project."
+                description: "This is my first project.",
+                symbol: ">"
             },
             {
                 dphoto: "images/engineering.png",
-                description: "My journey into engineering."
+                description: "My journey into engineering.",
+                symbol: ">"
             }
         ]
     },
@@ -154,6 +190,10 @@ mainBody.innerHTML = sections.map((section, index) => `
 
                     <p class="description">
                         ${detail.description}
+                    </p>
+
+                    <p class="symbol">
+                        ${detail.symbol}
                     </p>
                 </div>
             `).join("")}
