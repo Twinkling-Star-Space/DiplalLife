@@ -1,4 +1,12 @@
 
+body {
+    font-family: "Dancing Script", cursive;
+    font-size: 22px;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+}
 
 .nav-bar, .bars, .link-to-portfolio{
     display: flex;
@@ -36,18 +44,6 @@
     transition: transform 0.3s ease;
 }
 
-.content-section:nth-child(odd) .photo {
-    transform: rotate(-4deg);
-}
-
-.content-section:nth-child(even) .photo {
-    transform: rotate(4deg);
-}
-
-.photo:hover {
-    transform: rotate(0deg) scale(1.03) !important;
-}
-
 
 .details{
     display: flex;
@@ -60,8 +56,13 @@
     width: 40px;
 }
 
+
+
+
+
+
 .content-section {
-    height: 400px;
+    height: 475px;
     display: flex;
     flex-direction: horizontal;
     align-items: center;
@@ -78,6 +79,87 @@
 
 
 
+
+
+.photo-stack {
+    position: relative;
+    width: 350px;
+    height: 300px;
+    flex-shrink: 0;
+}
+
+.photo-stack .photo {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 250px;
+    height: 300px;
+    object-fit: cover;
+    border: 6px solid white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform-origin: bottom center;
+}
+
+
+.photo-1 {
+    transform: translateX(-50%) rotate(-15deg);
+    z-index: 1;
+}
+
+.photo-2 {
+    transform: translateX(-50%) rotate(00deg);
+    z-index: 2;
+}
+
+.photo-3 {
+    transform: translateX(-50%) rotate(15deg);
+    z-index: 3;
+}
+
+/* Animate all photos smoothly */
+.photo-stack .photo {
+    transition: transform 0.4s ease;
+}
+
+/* When any photo is hovered, rotate all photos */
+.photo-stack:has(.photo:hover) .photo-1 {
+    transform: translateX(-50%) rotate(-40deg) scale(1.05);
+}
+
+.photo-stack:has(.photo:hover) .photo-2 {
+    transform: translateX(-50%) rotate(0deg) scale(1.05);
+}
+
+.photo-stack:has(.photo:hover) .photo-3 {
+    transform: translateX(-50%) rotate(40deg) scale(1.05);
+}
+
+
+
+
+
+
+
+
+/* First section: keep the personal photo completely still */
+.content-section:first-child .photo-stack .photo {
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+    scale: none !important;
+    rotate: none !important;
+    filter: none !important;
+    box-shadow: none;
+}
+
+/* Prevent hover effects on the first section */
+.content-section:first-child .photo-stack .photo:hover {
+    transform: none !important;
+    scale: none !important;
+    rotate: none !important;
+    filter: none !important;
+    box-shadow: none;
+}
 
 
 

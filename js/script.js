@@ -2,13 +2,17 @@
 const sections = [
     {
         title: "Who am I?",
-        photo: "images/education.png",
-        description: "My academic journey and learning progress." ,
+        photo: ["images/education.png"],
+        description: "I recommend you not to read this passage for your sake. Generally, I am a Serious guy. I hate meaningless talks. I prefer like Minded people around me. I really want open person in my life. That's why I have very small loop. I hope you can understand me. If you think I would be better than this and improve, I am ready for any suggestion about my basic nature. I like the person like you who does not judge instead understands and helps. " ,
         details: []
     },
     {
         title: "My Academic Life",
-        photo: "images/engineering.png",
+        photo: [
+        "images/education.png",
+        "images/engineering.png",
+        "images/culture.png"
+         ],
         description: "My projects, experiments, and technical skills.",
         details: [
             {
@@ -22,15 +26,18 @@ const sections = [
                 symbol: ">"
             },
             {
-            dphoto: "images/engineering.png",
-            description: "Super Sense Secondary School, Dharapani, Dhanusha, Madhesh",
-            symbol: ">"
+                dphoto: "images/engineering.png",
+                description: "Super Sense Secondary School, Dharapani, Dhanusha, Madhesh",
+                symbol: ">"
             }
         ]
     },
     {
         title: "My Culture & My Roots",
-        photo: "images/culture.png",
+        photo: ["images/culture.png",
+            "images/culture.png",
+            "images/culture.png"
+        ],
         description: "My hometown, traditions, and cultural identity.",
         details: [
             {
@@ -52,17 +59,15 @@ const sections = [
                 dphoto: "images/engineering.png",
                 description: "Diwali",
                 symbol: ">"
-            },
-            {
-                dphoto: "images/engineering.png",
-                description: "Holi",
-                symbol: ">"
             }
         ]
     },
     {
         title: "Projects & Research",
-        photo: "images/leadership.png",
+        photo: ["images/leadership.png",
+            "images/leadership.png",
+            "images/leadership.png"
+        ],
         description: "My projects and research experiences.",
         details: [
             {
@@ -79,41 +84,55 @@ const sections = [
     },
     {
         title: "Community and Service",
-        photo: "images/engineering.png",
+        photo: ["images/engineering.png",
+            "images/engineering.png",
+            "images/engineering.png"
+        ],
         description: "My projects, experiments, and technical skills.",
         details: [
             {
                 dphoto: "images/education.png",
-                description: "This is my first project.",
+                description: "Teaching secondary school students",
                 symbol: ">"
             },
             {
                 dphoto: "images/engineering.png",
-                description: "My journey into engineering.",
+                description: "Planting trees on the 100 acres baren land.",
+                symbol: ">"
+            },
+            {
+                dphoto: "images/engineering.png",
+                description: "Guiding juniors for better improvement",
                 symbol: ">"
             }
         ]
     },
     {
         title: "Competition and My Achievement",
-        photo: "images/engineering.png",
+        photo: ["images/engineering.png",
+            "images/engineering.png",
+            "images/engineering.png"
+        ],
         description: "My projects, experiments, and technical skills.",
         details: [
             {
                 dphoto: "images/education.png",
-                description: "This is my first project.",
+                description: "Tech day Competition 2024, Won Creative Award",
                 symbol: ">"
             },
             {
                 dphoto: "images/engineering.png",
-                description: "My journey into engineering.",
+                description: "Journalism",
                 symbol: ">"
             }
         ]
     },
     {
         title: "Sport, Hobbies, my Personal life",
-        photo: "images/engineering.png",
+        photo: ["images/engineering.png",
+            "images/engineering.png",
+            "images/engineering.png"
+        ],
         description: "My projects, experiments, and technical skills.",
         details: [
             {
@@ -130,7 +149,10 @@ const sections = [
     },
     {
         title: "Journal & Reflection",
-        photo: "images/engineering.png",
+        photo: ["images/engineering.png",
+            "images/engineering.png",
+            "images/engineering.png"
+        ],
         description: "My projects, experiments, and technical skills.",
         details: [
             {
@@ -147,7 +169,10 @@ const sections = [
     },
     {
         title: "My Garden",
-        photo: "images/engineering.png",
+        photo: ["images/engineering.png",
+            "images/engineering.png",
+            "images/engineering.png"
+        ],
         description: "My projects, experiments, and technical skills.",
         details: [
             {
@@ -170,9 +195,14 @@ const mainBody = document.getElementById("main-body");
 mainBody.innerHTML = sections.map((section, index) => `
     <section class="content-section ${index % 2 === 0 ? "reverse" : ""}">
 
-        <img class="photo"
-             src="${section.photo}"
-             alt="${section.title}">
+        
+        <div class="photo-stack">
+            ${section.photo.map((img, i) => `
+                <img class="photo photo-${i + 1}"
+                    src="${img}"
+                    alt="${section.title}">
+            `).join("")}
+        </div>
 
         <div class="section-text">
 
